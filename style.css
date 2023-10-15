@@ -27,6 +27,45 @@
   height: 38px;
 }
 
+.main {
+  background-color: darkslategray;
+}
+
+.memoru__game {
+  width: 640px;
+  height: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 20px;
+}
+
+.memory__card {
+  width: calc(25% - 10px);
+  height: calc(30% - 10px);
+  margin: 5px;
+  position: relative;
+  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+  transform: scale(1);
+  transition: all .2s;
+}
+
+.memory-card:active {
+  transform: scale(0.97);
+  transition: all .2s;
+}
+
+.front__face,
+.back__face {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  position: absolute;
+  border-radius: 5px;
+  background: darkseagreen;
+  cursor: pointer;
+}
+
 
 
 
