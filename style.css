@@ -49,6 +49,23 @@
   cursor: pointer;
 }
 
+.main p {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  position: absolute;
+  top: 155px;
+  left: 175px;
+}
+#timer {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  position: absolute;
+  top: 155px;
+  left: 305px;
+}
+
 .memoru__game {
   width: 640px;
   height: 640px;
