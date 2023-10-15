@@ -1,0 +1,64 @@
+.header{
+  width: 100%;
+  border-bottom: 5px solid greenyellow;
+  background-color: darkolivegreen;
+}
+
+.wrapper {
+  max-width: 91.43rem;
+  margin: auto;
+}
+
+.header__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 70px;
+}
+
+.header__title {
+  font-size: 2.3rem;
+  font-weight: 900;
+}
+
+.camera {
+  width: 38px;
+  height: 38px;
+}
+
+
+
+
+
+
+.footer {
+  margin: 0 auto;
+  width: 100%; 
+  height: 54px;
+  border-top: 5px solid greenyellow;
+  background-color: darkolivegreen;
+}
+
+.footer__mem {
+  max-width: 91.43rem;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: white;
+  margin-top: 5px;
+}
+
+.footer a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer a:hover {
+  transform: scale(1.15);
+  transition: all 0.5s;
+}
