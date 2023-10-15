@@ -31,6 +31,24 @@
   background-color: darkslategray;
 }
 
+.start {
+  position: absolute;
+  top: 95px;
+  left: 170px;
+  background: darkgreen;
+  border-radius: 100px;
+  padding: 15px 45px;
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #292929;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+
 .memoru__game {
   width: 640px;
   height: 640px;
