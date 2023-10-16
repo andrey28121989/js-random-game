@@ -6,6 +6,7 @@ let firstCard, secondCard;
 
 const timer = document.getElementById('timer');
 
+let counter = 0;
 let timeCounter = 0;
 let gameTime = null;
 let matchCount = 0;
@@ -14,23 +15,13 @@ const modal = document.getElementById('myModal');
 const again = document.getElementById('play-again');
 const start = document.querySelector('.start');
 
-function gameEnds() {
-  if (matchCount === 12){
-  modal.style.display = 'block';
-  }
-}
-
-again.onclick = function() {
-  modal.style.display = 'none';
-  resetTimer();
-  rotateCard();
-};
+memoryCards.forEach(card => card.addEventListener('click', rotateCard));
 
 function rotateCard() {
   if (lockBoard) return;
   if (this === firstCard) return;
 
-  this.classList.add('rotate');
+  this.classList.toggle('rotate');
 
   if (!hasFlippedCard) {
     hasFlippedCard = true;
@@ -39,16 +30,19 @@ function rotateCard() {
   }
 
   secondCard = this;
-
+  hasFlippedCard = false;
   checkForMatch();
 }
 
 function checkForMatch() {
   if (firstCard.dataset.framework === secondCard.dataset.framework) {
     disableCards();
+    counter = counter + 1;
+    if (counter === 6) {
+      showModal();
+    }
     return;
   }
-
   unflipCards();
 }
 
@@ -61,8 +55,8 @@ function disableCards() {
 function unflipCards() {
   lockBoard = true;
   setTimeout(() => {
-    firstCard.classList.remove('rotate');
-    secondCard.classList.remove('rotate');
+    firstCard.classList.toggle('rotate');
+    secondCard.classList.toggle('rotate');
     resetBoard();
   }, 1200);
 }
@@ -79,7 +73,25 @@ function resetBoard() {
   });
 })();
 
-memoryCards.forEach(card => card.addEventListener('click', rotateCard));
+function showModal() {
+  setTimeout(() => {
+    modal.style.zIndex = 2;
+  }, 1000);
+  resetTimer();
+}
+
+function restartGame() {
+  modal.style.zIndex = -1;
+  counter = 0;
+  hasFlippedCard = false;
+  lockBoard = false;
+  memoryCards.forEach(card => {
+      card.classList.toggle('rotate');
+    });
+  resetTimer();
+}
+
+again.addEventListener('click', restartGame);
 
 function formatSeconds(seconds) {
   const date = new Date(1970, 0, 1);
@@ -100,3 +112,4 @@ function resetTimer() {
 window.addEventListener('load', () => {
   gameTime = initGameTime();
 });
+
