@@ -23,8 +23,7 @@
   </header>
   <main class="main">
     <a href="index.html" class="start">Start game</a>
-    <p><span id="moves">0</span> Moves</p>
-    <div id="timer">00:00</div>
+    <div id="timer">00:00:00</div>
     <section class="memoru__game">
       <div class="memory__card" data-framework="pawn">
         <img class="front__face" src="assets/img/chess_pawn.png" alt="Pawn">
@@ -93,6 +92,16 @@
         </a>
     </div>
   </footer>
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <h1 id="modal-heading">Congratulation, You Won!</h1>
+      <div class="result-board">
+        <p id="result" class="result-text"></p>
+      </div>
+      <button id="play-again" tabindex ="-1" class="play-again-button">Play again</button>
+    </div>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
